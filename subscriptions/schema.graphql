@@ -1,0 +1,13 @@
+directive @eventsRequest(topic: String!) on FIELD_DEFINITION
+directive @eventsPublish(topic: String!) on FIELD_DEFINITION
+directive @eventsSubscribe(topic: String!) on FIELD_DEFINITION
+directive @external on FIELD_DEFINITION | OBJECT
+
+type User @key(fields: "id") @external {
+  id: String
+}
+
+type Subscription {
+  accountUpdate(id: String!): User
+    @eventsSubscribe(topic: "accountUpdate.{{ args.id }}")
+}

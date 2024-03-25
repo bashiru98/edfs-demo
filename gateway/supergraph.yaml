@@ -1,0 +1,13 @@
+version: 1
+subgraphs:
+  - name: users
+    routing_url: http://localhost:4018
+    schema:
+      file: ../users-graph/schema.graphql
+  - name: accounts
+    routing_url: http://localhost:4019
+    schema:
+      file: ../accounts-graph/schema.graphql
+  - name: subscriptions
+    schema:
+      file: ../subscriptions/schema.graphql

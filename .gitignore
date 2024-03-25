@@ -1,0 +1,32 @@
+# dependencies
+/accounts-graph/node_modules
+/users-graph/node_modules
+./gateway/config.json
+./gateway/router
+
+# production
+/build
+.env
+.env.prod
+.env.stag
+.env.dev
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+local.md
+
+temp
+
+router
+supergraph.graphql

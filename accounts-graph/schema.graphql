@@ -1,0 +1,8 @@
+type Account @key(fields: "id") {
+  id: String
+  balance: String
+}
+
+type Query {
+  accountDummy: String
+}

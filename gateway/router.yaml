@@ -1,0 +1,22 @@
+dev_mode: true
+# Path to the previous generated file
+router_config_path: config.json
+graph:
+   # Result of `wgc router token create`. Can be omitted for local testing.
+   token: ""
+
+events:
+   sources:
+      default:
+         provider: NATS
+         url: "nats://0.0.0.0:4222"
+
+headers:
+   all: # Header rules for all origin requests.
+      request:
+         - op: "propagate"
+           matching: .*
+
+engine:
+   debug:
+      report_websocket_connections: true

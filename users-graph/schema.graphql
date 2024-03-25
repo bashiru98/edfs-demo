@@ -1,0 +1,14 @@
+type User @key(fields: "id") {
+  id: String
+  name: String
+  acountId: String
+  account: Account
+}
+
+extend type Account @key(fields: "id") {
+  id: String
+}
+
+type Query {
+  userDummy: String
+}
